@@ -3,10 +3,10 @@
 session_start();
 
 // Database connection settings
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "booking_db";
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$db_user = getenv('DB_USER') ?: 'root';
+$db_pass = getenv('DB_PASS') ?: '';
+$db_name = getenv('DB_NAME') ?: 'booking_db';
 
 // Create connection
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
